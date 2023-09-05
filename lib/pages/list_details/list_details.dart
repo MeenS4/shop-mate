@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shopmate/resources/app_resources.dart';
 import 'package:shopmate/shared/UI/scroll_animation.dart';
-import 'package:shopmate/shared/widgets/wrappers/main_page_container.dart';
 
 class ListDetailsPage extends StatefulWidget {
   const ListDetailsPage();

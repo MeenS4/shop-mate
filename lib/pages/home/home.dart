@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:shopmate/pages/home/widgets/user_lists/user_lists.dart';
-import 'package:shopmate/pages/list_details/list_details.dart';
 import 'package:shopmate/pages/settings/settings_page.dart';
 import 'package:shopmate/resources/app_resources.dart';
 import 'package:shopmate/pages/home/widgets/recent_transactions/recent_transactions_widget.dart';
@@ -16,8 +15,6 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    final mq = MediaQuery.of(context);
-
     return Scaffold(
       appBar: AppBar(
         backgroundColor: AppColors.appBarBackgroundColor,
@@ -90,22 +87,18 @@ class _HomePageState extends State<HomePage> {
           UserLists(),
           RecentTransactionsHomePage(),
           CartesianLastMonthStatistics(),
-          Padding(
-            padding: EdgeInsets.only(left: 10),
-            child: Center(
-              child: Ink(
-                width: mq.size.width * 0.42,
-                decoration: BoxDecoration(
-                  color: AppColors.white,
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                child: Text(
-                  'listName',
-                  style: TextStyle(
-                    color: AppColors.darkGrey,
-                    fontSize: AppFontSizes.fsSmallPlus,
-                    fontWeight: FontWeight.w500,
-                  ),
+          Container(
+            color: Colors.orange,
+            child: Material(
+              color: Colors.transparent,
+              child: InkWell(
+                splashColor: AppColors.primaryBlue,
+                onTap: () {
+                  print("tapped");
+                },
+                child: Container(
+                  width: 100.0,
+                  height: 100.0,
                 ),
               ),
             ),

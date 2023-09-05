@@ -13,30 +13,42 @@ class UserListsListTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      splashColor: AppColors.darkGrey,
-      onTap: () {
-        Navigator.of(context).push(
-          AppAnimations.pageTransitionAnimationBuilder(
-            ListDetailsPage(),
+    return Padding(
+      padding: EdgeInsets.only(left: 10),
+      child: Center(
+        child: Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(AppConstants.borderRadius),
+            color: AppColors.white,
           ),
-        );
-      },
-      child: Padding(
-        padding: EdgeInsets.only(left: 10),
-        child: Center(
-          child: Ink(
-            width: mq.size.width * 0.42,
-            decoration: BoxDecoration(
-              color: AppColors.white,
-              borderRadius: BorderRadius.circular(10),
-            ),
-            child: Text(
-              listName,
-              style: TextStyle(
-                color: AppColors.darkGrey,
-                fontSize: AppFontSizes.fsSmallPlus,
-                fontWeight: FontWeight.w500,
+          child: Material(
+            color: Colors.transparent,
+            child: InkWell(
+              borderRadius: BorderRadius.circular(AppConstants.borderRadius),
+              splashColor: AppColors.lightGrey,
+              onTap: () {
+                Navigator.of(context).push(
+                  AppAnimations.pageTransitionAnimationBuilder(
+                    ListDetailsPage(),
+                  ),
+                );
+              },
+              child: Container(
+                height: double.infinity,
+                width: mq.size.width * 0.42,
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                  borderRadius:
+                      BorderRadius.circular(AppConstants.borderRadius),
+                ),
+                child: Text(
+                  listName,
+                  style: TextStyle(
+                    color: AppColors.darkGrey,
+                    fontSize: AppFontSizes.fsSmallPlus,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
               ),
             ),
           ),

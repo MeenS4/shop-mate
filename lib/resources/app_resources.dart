@@ -53,6 +53,8 @@ class AppConstants {
   );
 
   static const bool isAppBarTitleCentered = true;
+
+  static const double borderRadius = 10;
 }
 
 class AppAnimations {
