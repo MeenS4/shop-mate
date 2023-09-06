@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shopmate/pages/list_details/widgets/item_tile_list_details_page.dart';
 import 'package:shopmate/resources/app_resources.dart';
 import 'package:shopmate/shared/UI/scroll_animation.dart';
 
@@ -14,7 +15,36 @@ class _ListDetailsPageState extends State<ListDetailsPage> {
   Widget build(BuildContext context) {
     final MediaQueryData mq = MediaQuery.of(context);
     final double height = mq.size.height;
-    final double width = mq.size.width;
+    // final double width = mq.size.width;
+
+    //Temporary list of args for listview.builder
+    //This will work very similar in the future
+    final List<Map> listItems = [
+      {
+        'itemName': 'Bread',
+        'isChecked': false,
+      },
+      {
+        'itemName': 'Water',
+        'isChecked': true,
+      },
+      {
+        'itemName': 'Vegetables',
+        'isChecked': true,
+      },
+      {
+        'itemName': 'Pizza',
+        'isChecked': false,
+      },
+      {
+        'itemName': 'Hamburgers',
+        'isChecked': true,
+      },
+      {
+        'itemName': 'Fries',
+        'isChecked': false,
+      },
+    ];
 
     return Scaffold(
       backgroundColor: AppColors.backgroundColor,
@@ -32,7 +62,7 @@ class _ListDetailsPageState extends State<ListDetailsPage> {
           ),
         ),
         title: Text(
-          'List Name',
+          'Grocery Store',
           style: AppTextStyles.appBarTitle,
         ),
         actions: [
@@ -49,35 +79,11 @@ class _ListDetailsPageState extends State<ListDetailsPage> {
         height: height,
         child: ScrollAnimation(
           child: ListView.builder(
-            itemCount: 20,
+            itemCount: listItems.length,
             itemBuilder: (context, index) {
-              return Container(
-                width: width,
-                padding: EdgeInsets.symmetric(horizontal: 5, vertical: 10),
-                decoration: BoxDecoration(
-                  border: Border(
-                    bottom: BorderSide(color: AppColors.dividerColor, width: 1),
-                  ),
-                ),
-                child: Row(
-                  children: [
-                    IconButton(
-                      onPressed: () {},
-                      icon: Icon(
-                        Icons.circle_outlined,
-                        color: AppColors.primaryOrange,
-                      ),
-                    ),
-                    // SizedBox(width: 10),
-                    Text(
-                      'List Item',
-                      style: TextStyle(
-                        color: AppColors.darkGrey,
-                        fontSize: AppFontSizes.fsSmallPlus,
-                      ),
-                    ),
-                  ],
-                ),
+              return ItemTileListDetailsPage(
+                item: listItems[index]['itemName'],
+                isChecked: listItems[index]['isChecked'],
               );
             },
           ),

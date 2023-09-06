@@ -87,22 +87,6 @@ class _HomePageState extends State<HomePage> {
           UserLists(),
           RecentTransactionsHomePage(),
           CartesianLastMonthStatistics(),
-          Container(
-            color: Colors.orange,
-            child: Material(
-              color: Colors.transparent,
-              child: InkWell(
-                splashColor: AppColors.primaryBlue,
-                onTap: () {
-                  print("tapped");
-                },
-                child: Container(
-                  width: 100.0,
-                  height: 100.0,
-                ),
-              ),
-            ),
-          ),
         ],
       ),
     );
