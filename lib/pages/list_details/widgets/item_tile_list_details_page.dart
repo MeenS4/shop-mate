@@ -17,11 +17,22 @@ class ItemTileListDetailsPage extends StatefulWidget {
 }
 
 class _ItemTileListDetailsPageState extends State<ItemTileListDetailsPage> {
+  bool isWidgetInit = false;
+  bool isChecked = false;
+
+  @override
+  void didChangeDependencies() {
+    if (!isWidgetInit) {
+      isWidgetInit = !isWidgetInit;
+      isChecked = widget.isChecked;
+    }
+    super.didChangeDependencies();
+  }
+
   @override
   Widget build(BuildContext context) {
     final double width = MediaQuery.of(context).size.width;
     final item = widget.item;
-    bool isChecked = widget.isChecked;
 
     Icon genIcon() {
       if (isChecked) {
