@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:shopmate/resources/app_resources.dart';
+import 'package:shopmate/shared/ui_effects/splash_effect_wrapper.dart';
 
 class ItemTileListDetailsPage extends StatefulWidget {
   final String item;
-
-  bool isChecked;
+  final bool isChecked;
 
   ItemTileListDetailsPage({
     required String this.item,
@@ -31,6 +31,7 @@ class _ItemTileListDetailsPageState extends State<ItemTileListDetailsPage> {
 
   @override
   Widget build(BuildContext context) {
+    final double height = MediaQuery.of(context).size.height;
     final double width = MediaQuery.of(context).size.width;
     final item = widget.item;
 
@@ -48,35 +49,45 @@ class _ItemTileListDetailsPageState extends State<ItemTileListDetailsPage> {
       }
     }
 
-    return Container(
-      width: width,
-      padding: EdgeInsets.symmetric(horizontal: 5, vertical: 10),
-      decoration: BoxDecoration(
-        border: Border(
-          bottom: BorderSide(color: AppColors.dividerColor, width: 1),
+    void toggleCheckButton() {
+      setState(() {
+        isChecked = !isChecked;
+      });
+    }
+
+    return SplashEffectWrapper(
+      onTapFunc: () {},
+      color: AppColors.backgroundColor,
+      borderRadius: 0,
+      child: Container(
+        height: height * 0.1,
+        width: width,
+        padding: EdgeInsets.symmetric(
+          horizontal: 5,
+          vertical: 10,
         ),
-      ),
-      child: Row(
-        children: [
-          IconButton(
-            onPressed: () {
-              setState(() {
-                print(isChecked);
-                isChecked = !isChecked;
-                print(isChecked);
-              });
-            },
-            icon: genIcon(),
+        decoration: BoxDecoration(
+          border: Border(
+            bottom: BorderSide(color: AppColors.dividerColor, width: 1),
           ),
-          // SizedBox(width: 10),
-          Text(
-            item,
-            style: TextStyle(
-              color: AppColors.darkGrey,
-              fontSize: AppFontSizes.fsSmallPlus,
+        ),
+        child: Row(
+          children: [
+            IconButton(
+              onPressed: () {
+                toggleCheckButton();
+              },
+              icon: genIcon(),
             ),
-          ),
-        ],
+            Text(
+              item,
+              style: TextStyle(
+                color: AppColors.darkGrey,
+                fontSize: AppFontSizes.fsSmallPlus,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

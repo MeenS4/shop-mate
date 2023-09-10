@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shopmate/pages/home/widgets/user_lists/user_lists_list_tile.dart';
-import 'package:shopmate/shared/UI/scroll_animation.dart';
+import 'package:shopmate/shared/ui_effects/scroll_animation.dart';
 
 class UserLists extends StatefulWidget {
   @override

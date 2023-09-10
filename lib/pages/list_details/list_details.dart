@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shopmate/pages/list_details/widgets/item_tile_list_details_page.dart';
 import 'package:shopmate/resources/app_resources.dart';
-import 'package:shopmate/shared/UI/scroll_animation.dart';
+import 'package:shopmate/shared/ui_effects/scroll_animation.dart';
 
 class ListDetailsPage extends StatefulWidget {
   const ListDetailsPage();
@@ -20,6 +20,54 @@ class _ListDetailsPageState extends State<ListDetailsPage> {
     //Temporary list of args for listview.builder
     //This will work very similar in the future
     final List<Map> listItems = [
+      {
+        'itemName': 'Bread',
+        'isChecked': false,
+      },
+      {
+        'itemName': 'Water',
+        'isChecked': true,
+      },
+      {
+        'itemName': 'Vegetables',
+        'isChecked': true,
+      },
+      {
+        'itemName': 'Pizza',
+        'isChecked': false,
+      },
+      {
+        'itemName': 'Hamburgers',
+        'isChecked': true,
+      },
+      {
+        'itemName': 'Fries',
+        'isChecked': false,
+      },
+      {
+        'itemName': 'Bread',
+        'isChecked': false,
+      },
+      {
+        'itemName': 'Water',
+        'isChecked': true,
+      },
+      {
+        'itemName': 'Vegetables',
+        'isChecked': true,
+      },
+      {
+        'itemName': 'Pizza',
+        'isChecked': false,
+      },
+      {
+        'itemName': 'Hamburgers',
+        'isChecked': true,
+      },
+      {
+        'itemName': 'Fries',
+        'isChecked': false,
+      },
       {
         'itemName': 'Bread',
         'isChecked': false,

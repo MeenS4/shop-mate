@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shopmate/resources/app_resources.dart';
-import 'package:shopmate/shared/UI/scroll_animation.dart';
+import 'package:shopmate/shared/ui_effects/scroll_animation.dart';
 
 class MainPageContainer extends StatelessWidget {
   MainPageContainer({
