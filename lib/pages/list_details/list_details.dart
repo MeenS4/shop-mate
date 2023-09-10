@@ -114,12 +114,58 @@ class _ListDetailsPageState extends State<ListDetailsPage> {
           style: AppTextStyles.appBarTitle,
         ),
         actions: [
-          IconButton(
-            onPressed: () {},
+          PopupMenuButton(
+            elevation: 2,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(5),
+            ),
+            color: AppColors.backgroundColor,
             icon: Icon(
               Icons.more_vert_rounded,
               color: AppColors.darkGrey,
             ),
+            itemBuilder: (context) {
+              return [
+                PopupMenuItem(
+                  value: '0',
+                  child: Text(
+                    'Nr 1',
+                    style: TextStyle(
+                      color: AppColors.darkGrey,
+                      fontSize: AppFontSizes.fsSmallPlus,
+                    ),
+                  ),
+                ),
+                PopupMenuItem(
+                  value: '1',
+                  child: Text(
+                    'Nr 2',
+                    style: TextStyle(
+                      color: AppColors.darkGrey,
+                      fontSize: AppFontSizes.fsSmallPlus,
+                    ),
+                  ),
+                ),
+                PopupMenuItem(
+                  value: '2',
+                  child: Text(
+                    'Nr 3',
+                    style: TextStyle(
+                      color: AppColors.darkGrey,
+                      fontSize: AppFontSizes.fsSmallPlus,
+                    ),
+                  ),
+                ),
+              ];
+            },
+            onSelected: (value) {
+              switch (value) {
+                case '0':
+                  {
+                    print('list_details - popupmenubutton - n1');
+                  }
+              }
+            },
           ),
         ],
       ),

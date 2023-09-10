@@ -5,8 +5,8 @@ class SplashEffectWrapper extends StatelessWidget {
   final VoidCallback onTapFunc;
   final Widget child;
   final Color color;
-  Color? splashColor;
-  double borderRadius;
+  final Color? splashColor;
+  final double borderRadius;
 
   SplashEffectWrapper({
     required VoidCallback this.onTapFunc,
