@@ -4,7 +4,13 @@ import 'package:shopmate/resources/app_resources.dart';
 import 'package:shopmate/shared/ui_effects/scroll_animation.dart';
 
 class ListDetailsPage extends StatefulWidget {
-  const ListDetailsPage();
+  final String listName;
+  final Color listMainTheme;
+
+  ListDetailsPage({
+    required this.listName,
+    this.listMainTheme = AppColors.primaryBlue,
+  });
 
   @override
   State<ListDetailsPage> createState() => _ListDetailsPageState();
@@ -110,7 +116,7 @@ class _ListDetailsPageState extends State<ListDetailsPage> {
           ),
         ),
         title: Text(
-          'Grocery Store',
+          widget.listName,
           style: AppTextStyles.appBarTitle,
         ),
         actions: [
@@ -178,6 +184,7 @@ class _ListDetailsPageState extends State<ListDetailsPage> {
               return ItemTileListDetailsPage(
                 item: listItems[index]['itemName'],
                 isChecked: listItems[index]['isChecked'],
+                mainTheme: widget.listMainTheme,
               );
             },
           ),

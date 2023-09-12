@@ -5,10 +5,12 @@ import 'package:shopmate/shared/ui_effects/splash_effect_wrapper.dart';
 class ItemTileListDetailsPage extends StatefulWidget {
   final String item;
   final bool isChecked;
+  final Color mainTheme;
 
   ItemTileListDetailsPage({
     required String this.item,
     required bool this.isChecked,
+    this.mainTheme = AppColors.primaryBlue,
   });
 
   @override
@@ -39,12 +41,12 @@ class _ItemTileListDetailsPageState extends State<ItemTileListDetailsPage> {
       if (isChecked) {
         return Icon(
           Icons.check_circle_rounded,
-          color: AppColors.primaryOrange,
+          color: widget.mainTheme,
         );
       } else {
         return Icon(
           Icons.circle_outlined,
-          color: AppColors.primaryOrange,
+          color: widget.mainTheme,
         );
       }
     }

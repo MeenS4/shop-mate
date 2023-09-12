@@ -39,7 +39,7 @@ class _HomePageState extends State<HomePage> {
         child: Icon(
           Icons.add_rounded,
           color: AppColors.white,
-          size: 30,
+          size: 25,
         ),
       ),
 

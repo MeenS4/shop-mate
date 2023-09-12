@@ -29,7 +29,9 @@ class UserListsListTile extends StatelessWidget {
               onTap: () {
                 Navigator.of(context).push(
                   AppAnimations.pageTransitionAnimationBuilder(
-                    ListDetailsPage(),
+                    ListDetailsPage(
+                      listName: listName,
+                    ),
                   ),
                 );
               },
