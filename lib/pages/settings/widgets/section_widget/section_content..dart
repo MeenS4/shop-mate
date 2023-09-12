@@ -26,13 +26,22 @@ class SettingsPageSectionContent extends StatelessWidget {
       children: [
         Container(
           width: width,
-          padding: EdgeInsets.symmetric(vertical: 15, horizontal: 35),
-          child: Text(
-            title,
-            style: TextStyle(
-              color: AppColors.darkGrey,
-              fontSize: AppFontSizes.fsSmallPlus,
-              fontWeight: FontWeight.w400,
+          child: Material(
+            color: Colors.transparent,
+            child: InkWell(
+              onTap: () {},
+              splashColor: AppColors.lightGrey,
+              child: Padding(
+                padding: EdgeInsets.symmetric(vertical: 15, horizontal: 35),
+                child: Text(
+                  title,
+                  style: TextStyle(
+                    color: AppColors.darkGrey,
+                    fontSize: AppFontSizes.fsSmallPlus,
+                    fontWeight: FontWeight.w400,
+                  ),
+                ),
+              ),
             ),
           ),
         ),

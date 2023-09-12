@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 import 'package:shopmate/pages/list_details/list_details.dart';
 import 'package:shopmate/resources/app_resources.dart';
-import 'package:shopmate/shared/ui_effects/splash_effect_wrapper.dart';
 
 class UserListsListElement extends StatefulWidget {
   final String listTitle;
@@ -26,49 +25,56 @@ class _UserListsListElementState extends State<UserListsListElement> {
     // final double height = mq.size.height;
     final double width = mq.size.width;
 
-    return GestureDetector(
-      onTap: () {
-        Navigator.of(context).push(
-          AppAnimations.pageTransitionAnimationBuilder(
-            ListDetailsPage(
-              listName: widget.listTitle,
-              listMainTheme: widget.progressColor,
-            ),
-          ),
-        );
-      },
-      child: Container(
-        width: width,
-        padding: EdgeInsets.symmetric(horizontal: 10, vertical: 20),
-        margin: AppConstants.sectionMargin,
-        decoration: BoxDecoration(
+    return Container(
+      width: width,
+      margin: AppConstants.sectionMargin,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(AppConstants.borderRadius),
+        color: AppColors.white,
+      ),
+      child: Material(
+        color: Colors.transparent,
+        child: InkWell(
           borderRadius: BorderRadius.circular(AppConstants.borderRadius),
-          color: AppColors.white,
-        ),
-        child: Wrap(
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(bottom: 15),
-              child: Text(
-                widget.listTitle,
-                style: TextStyle(
-                  color: AppColors.darkGrey,
-                  fontSize: AppFontSizes.fsSmallPlus,
+          splashColor: AppColors.lightGrey,
+          onTap: () {
+            Navigator.of(context).push(
+              AppAnimations.pageTransitionAnimationBuilder(
+                ListDetailsPage(
+                  listName: widget.listTitle,
+                  listMainTheme: widget.progressColor,
                 ),
               ),
+            );
+          },
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 10, vertical: 20),
+            child: Wrap(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 15),
+                  child: Text(
+                    widget.listTitle,
+                    style: TextStyle(
+                      color: AppColors.darkGrey,
+                      fontSize: AppFontSizes.fsSmallPlus,
+                    ),
+                  ),
+                ),
+                LinearPercentIndicator(
+                  lineHeight: 8,
+                  percent: widget.listCheckedPercentage,
+                  animation: true,
+                  curve: Curves.easeIn,
+                  animationDuration: 400,
+                  backgroundColor: AppColors.backgroundColor,
+                  progressColor: widget.progressColor,
+                  padding: EdgeInsets.only(right: 5),
+                  barRadius: Radius.circular(5),
+                ),
+              ],
             ),
-            LinearPercentIndicator(
-              lineHeight: 8,
-              percent: widget.listCheckedPercentage,
-              animation: true,
-              curve: Curves.easeIn,
-              animationDuration: 400,
-              backgroundColor: AppColors.backgroundColor,
-              progressColor: widget.progressColor,
-              padding: EdgeInsets.only(right: 5),
-              barRadius: Radius.circular(5),
-            ),
-          ],
+          ),
         ),
       ),
     );

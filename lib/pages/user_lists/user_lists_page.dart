@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:percent_indicator/linear_percent_indicator.dart';
 import 'package:shopmate/pages/user_lists/widgets/user_lists_list_element.dart';
 import 'package:shopmate/resources/app_resources.dart';
 import 'package:shopmate/shared/widgets/wrappers/main_page_container.dart';
@@ -14,9 +13,9 @@ class UserListsPage extends StatefulWidget {
 class _UserListsPageState extends State<UserListsPage> {
   @override
   Widget build(BuildContext context) {
-    final MediaQueryData mq = MediaQuery.of(context);
-    final double height = mq.size.height;
-    final double width = mq.size.width;
+    // final MediaQueryData mq = MediaQuery.of(context);
+    // final double height = mq.size.height;
+    // final double width = mq.size.width;
 
     return Scaffold(
       backgroundColor: AppColors.backgroundColor,
