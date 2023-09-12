@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:percent_indicator/linear_percent_indicator.dart';
+import 'package:shopmate/pages/user_lists/widgets/user_lists_list_element.dart';
 import 'package:shopmate/resources/app_resources.dart';
 import 'package:shopmate/shared/widgets/wrappers/main_page_container.dart';
 
@@ -12,16 +14,24 @@ class UserListsPage extends StatefulWidget {
 class _UserListsPageState extends State<UserListsPage> {
   @override
   Widget build(BuildContext context) {
+    final MediaQueryData mq = MediaQuery.of(context);
+    final double height = mq.size.height;
+    final double width = mq.size.width;
+
     return Scaffold(
+      backgroundColor: AppColors.backgroundColor,
       appBar: AppBar(
         backgroundColor: AppColors.appBarBackgroundColor,
         elevation: 0,
+        centerTitle: true,
         title: Text(
           'Your Lists',
           style: AppTextStyles.appBarTitle,
         ),
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
           icon: Icon(
             AppIcons.closePage,
             color: AppColors.darkGrey,
@@ -29,7 +39,22 @@ class _UserListsPageState extends State<UserListsPage> {
         ),
       ),
       body: MainPageContainer(
-        children: [],
+        children: [
+          UserListsListElement(
+            listTitle: 'Corner Shop',
+            listCheckedPercentage: 0.56,
+            progressColor: AppColors.primaryOrange,
+          ),
+          UserListsListElement(
+            listTitle: 'Walmart',
+            listCheckedPercentage: 0.16,
+          ),
+          UserListsListElement(
+            listTitle: 'Sam\'s club',
+            listCheckedPercentage: 0.86,
+            progressColor: AppColors.primaryOrange,
+          ),
+        ],
       ),
     );
   }

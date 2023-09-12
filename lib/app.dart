@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shopmate/pages/home/home.dart';
+import 'package:shopmate/pages/home/home_page.dart';
 import 'package:shopmate/resources/app_resources.dart';
 
 class MyApp extends StatelessWidget {

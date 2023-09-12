@@ -2,12 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:shopmate/pages/home/widgets/user_lists/user_lists_list_tile.dart';
 import 'package:shopmate/shared/ui_effects/scroll_animation.dart';
 
-class UserLists extends StatefulWidget {
+class UserListsHomePageWidget extends StatefulWidget {
   @override
-  State<UserLists> createState() => _UserListsState();
+  State<UserListsHomePageWidget> createState() =>
+      _UserListsHomePageWidgetState();
 }
 
-class _UserListsState extends State<UserLists> {
+class _UserListsHomePageWidgetState extends State<UserListsHomePageWidget> {
   @override
   build(BuildContext context) {
     final MediaQueryData mq = MediaQuery.of(context);

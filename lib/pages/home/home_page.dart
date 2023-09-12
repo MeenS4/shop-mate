@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:shopmate/pages/home/widgets/user_lists/user_lists.dart';
 import 'package:shopmate/pages/settings/settings_page.dart';
+import 'package:shopmate/pages/user_lists/user_lists_page.dart';
 import 'package:shopmate/resources/app_resources.dart';
 import 'package:shopmate/pages/home/widgets/recent_transactions/recent_transactions_widget.dart';
 import 'package:shopmate/shared/widgets/visuals/cartesian_lie_chart_last_month/line_chart_last_month.dart';
@@ -52,7 +53,13 @@ class _HomePageState extends State<HomePage> {
           BottomNavigationBarItem(
             label: 'Menu',
             icon: IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).push(
+                  AppAnimations.pageTransitionAnimationBuilder(
+                    UserListsPage(),
+                  ),
+                );
+              },
               icon: Icon(
                 Icons.menu_rounded,
                 color: AppColors.darkGrey,
@@ -84,7 +91,7 @@ class _HomePageState extends State<HomePage> {
       //Scaffold body
       body: MainPageContainer(
         children: [
-          UserLists(),
+          UserListsHomePageWidget(),
           RecentTransactionsHomePage(),
           CartesianLastMonthStatistics(),
         ],
