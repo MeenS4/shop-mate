@@ -76,5 +76,6 @@ class AppAnimations {
 }
 
 class AppIcons {
-  static const closePage = Icons.close;
+  static const IconData closePage = Icons.close_rounded;
+  static const double closePageIconSize = 22.5;
 }

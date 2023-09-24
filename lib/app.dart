@@ -4,12 +4,18 @@ import 'package:shopmate/resources/app_resources.dart';
 
 class MyApp extends StatelessWidget {
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) { 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Shop Mate',
       home: HomePage(),
-      theme: ThemeData(fontFamily: AppTextStyles.appFont),
+      theme: ThemeData(
+        fontFamily: AppTextStyles.appFont,
+        splashFactory: InkRipple.splashFactory,
+        iconTheme: IconThemeData(
+          size: 22.5,
+        ),
+      ),
     );
   }
 }

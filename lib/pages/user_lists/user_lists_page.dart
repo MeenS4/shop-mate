@@ -34,6 +34,7 @@ class _UserListsPageState extends State<UserListsPage> {
           icon: Icon(
             AppIcons.closePage,
             color: AppColors.darkGrey,
+            size: AppIcons.closePageIconSize,
           ),
         ),
       ),

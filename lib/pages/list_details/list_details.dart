@@ -113,6 +113,7 @@ class _ListDetailsPageState extends State<ListDetailsPage> {
           icon: Icon(
             AppIcons.closePage,
             color: AppColors.darkGrey,
+            size: AppIcons.closePageIconSize,
           ),
         ),
         title: Text(
