@@ -17,6 +17,8 @@ class AppColors {
   static const appBarBackgroundColor = Color(0xFFEEEEF5);
 
   static const dividerColor = Color.fromARGB(255, 220, 220, 220);
+
+  static const iconColor = Color.fromARGB(255, 157, 157, 157);
 }
 
 class AppFontSizes {

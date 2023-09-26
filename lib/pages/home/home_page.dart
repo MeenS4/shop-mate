@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:shopmate/pages/home/widgets/user_lists/user_lists.dart';
+import 'package:shopmate/pages/search_products/search_products_page.dart';
 import 'package:shopmate/pages/settings/settings_page.dart';
 import 'package:shopmate/pages/user_lists/user_lists_page.dart';
 import 'package:shopmate/resources/app_resources.dart';
@@ -33,7 +34,13 @@ class _HomePageState extends State<HomePage> {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
         elevation: 0,
-        onPressed: () {},
+        onPressed: () {
+          Navigator.of(context).push(
+            AppAnimations.pageTransitionAnimationBuilder(
+              SearchProductsPage(),
+            ),
+          );
+        },
         backgroundColor: AppColors.primaryOrange,
         splashColor: AppColors.primaryOrange,
         child: Icon(
